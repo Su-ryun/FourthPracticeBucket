@@ -1,10 +1,27 @@
 pipeline{
+  // I still have a hard time understanding what the agent means.
   agent { label 'linux' }
   stages {
-    stage ('Hello from Github.'){
+    stage ('Hello from Van.'){
       steps{
-        echo "Hello World!"
+        echo "Deep Dark Fantasy."
       }
     }
+    // Like the below, I can have stage where ...
+    /*
+    // One deals with the build automation.
+    stage('Build'){
+      steps {
+        sh 'mvn clean compile'
+      }
+    }
+    // One deals with the testing of things.
+    stage('Test') {
+      steps {
+        sh 'mvn test'
+        junit 'something in JUnit'
+      }
+    }
+    */
   }
 }
