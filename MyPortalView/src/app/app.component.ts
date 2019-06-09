@@ -14,10 +14,10 @@ interface techSitesClicked{
 })
 export class AppComponent {
 
-  type$: : Observable<string>
+  type$: Observable<string>;
 
-  constructor(private store: Store<AppState>){
-    this.message$ = this.store.select('message');
+  constructor(private store: Store<techSitesClicked>){
+    this.type$ = this.store.select('type');
   }
 
   showTechSites(){
