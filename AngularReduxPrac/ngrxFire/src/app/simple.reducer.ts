@@ -1,6 +1,10 @@
 import { Action } from '@ngrx/store';
 
-// Default state is whatever that is inside the parameter.
+/*
+  Reducers are only responsible for deciding which state transitions need
+  to occur for a given action.
+*/
+
 export function simpleReducer(state: string = 'Hello World', action: Action){
   console.log(action.type, state);
 
