@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Observable }   from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
-
-interface techSitesClicked{
-  type: string
-};
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,22 +7,29 @@ interface techSitesClicked{
 })
 export class AppComponent {
 
-  type$: Observable<string>;
-
-  constructor(private store: Store<techSitesClicked>){
-    this.type$ = this.store.select('type');
-  }
+  techSitesClicked = false;
+  academicSitesClicked = false;
+  foodSitesClicked = false;
 
   showTechSites(){
-    this.store.dispatch({type: "techsites"});
+    console.log("showTechSites was invoked.");
+    this.techSitesClicked = true;
+    this.academicSitesClicked = false;
+    this.foodSitesClicked = false;
   }
 
   showAcademicSites(){
-    this.store.dispatch({type: "academicsites"});
+    console.log("showAcademicSites was invoked.");
+    this.techSitesClicked = false;
+    this.academicSitesClicked = true;
+    this.foodSitesClicked = false;
   }
 
   showFoodSites(){
-    this.store.dispatch({type: "foodsites"});
+    console.log("showFoodSites was invoked.");
+    this.techSitesClicked = false;
+    this.academicSitesClicked = false;
+    this.foodSitesClicked = true;
   }
 
 }

@@ -1,23 +1,24 @@
-import { Action } from '@ngrx/store';
+export interface ResultList {
+  type: string;
+}
 
-export const techSitesClicked:  = {
-  type: ""
+export const initialState: ResultList = {
+  type: "No results."
 };
 
 export function appReducer(action){
-  console.log("Reducer is working.");
   switch (action.type) {
     case 'techsites':
       return {
-        type: "techsites"
+        type: 'techsites'
       };
     case 'academicsites':
       return {
-        type: "academicsites"
+        type: 'academicsites'
       };
     default:
       return {
-        type: "None"
+        type: 'error'
       };
   }
 }
