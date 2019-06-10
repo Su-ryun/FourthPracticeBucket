@@ -1,12 +1,18 @@
-export interface ResultList {
+import { Action } from '@ngrx/store';
+
+export interface Type {
   type: string;
 }
 
-export const initialState: ResultList = {
+export const initialState: Type = {
   type: "No results."
 };
 
-export function appReducer(action){
+//Reducer function won't work, unless you have the below two parameters.
+export function appReducer(state = initialState, action){
+
+  console.log("App reducer called.");
+
   switch (action.type) {
     case 'techsites':
       return {
@@ -15,6 +21,10 @@ export function appReducer(action){
     case 'academicsites':
       return {
         type: 'academicsites'
+      };
+    case 'foodsites':
+      return {
+        type: 'foodsites'
       };
     default:
       return {
