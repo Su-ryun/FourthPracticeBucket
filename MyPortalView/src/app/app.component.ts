@@ -20,9 +20,9 @@ export class AppComponent {
   type$: Observable<string>
 
   constructor(private store: Store<string>){
-// While referring to StoreModule.forRoot({ type: typeReducer }),
-// the type$ observable reference is being coupled with typeReducer function
-// because the argument being passed to the select function.
+    // While referring to StoreModule.forRoot({ type: typeReducer }),
+    // the type$ observable reference is being coupled with typeReducer function
+    // because the argument being passed to the select function.
     this.type$ = this.store.select('type');
   }
 

@@ -10,7 +10,7 @@ export const initialState: Type = {
 };
 
 //Reducer function won't work, unless you have the below two parameters.
-export function typeReducer(state = 'No list yet.', action){
+export function typeReducer(state = '', action){
 
   console.log("Action type currently: " + action.type);
 
