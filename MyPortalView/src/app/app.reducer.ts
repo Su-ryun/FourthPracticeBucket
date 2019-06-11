@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 
+//The below two are not being used for the sake of simple example.
 export interface Type {
   type: string;
 }
@@ -9,26 +10,19 @@ export const initialState: Type = {
 };
 
 //Reducer function won't work, unless you have the below two parameters.
-export function appReducer(state = initialState, action){
+export function typeReducer(state = 'No list yet.', action){
 
-  console.log("App reducer called.");
+  console.log("Action type currently: " + action.type);
 
+  // Whatever those are being returned below are binded to app.component.html's type$.
   switch (action.type) {
     case 'techsites':
-      return {
-        type: 'techsites'
-      };
+      return 'techsites';
     case 'academicsites':
-      return {
-        type: 'academicsites'
-      };
+      return 'academicsites';
     case 'foodsites':
-      return {
-        type: 'foodsites'
-      };
+      return 'foodsites';
     default:
-      return {
-        type: 'error'
-      };
+      return state;
   }
 }

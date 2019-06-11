@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { ResultComponent } from './result/result.component';
-import { appReducer } from './app.reducer';
+import { typeReducer } from './app.reducer';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { appReducer } from './app.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ type: appReducer })
+    //The type identifier is being coupled with typeReducer function.
+    StoreModule.forRoot({ type: typeReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

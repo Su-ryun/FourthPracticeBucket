@@ -1,8 +1,7 @@
-<!-- What's the below? -->
-{{ type$ | async }}
 <div id="portals" class="btn-group">
   <button id="techsites" (click)="showTechSites()"> techsites </button>
   <button id="academicsites" (click)="showAcademicSites()"> academicsites </button>
   <button id="foodsites" (click)="showFoodSites()"> foodsites </button>
 </div>
-<app-result *ngIf="techSitesClicked"></app-result>
+<!-- Still not sure what the async does. -->
+{{ type$ | async }}
