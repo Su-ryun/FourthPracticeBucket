@@ -1,16 +1,28 @@
 /* Testing out CSS comments. */
 #portals{
-  width: 100%;
+  position: absolute;
+  width: 1400px;
+  height: 100px;
+  overflow-x: auto;
 }
 
 #techsites{
-  width: 33.3%;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: 0 20px 0;
 }
 
 #academicsites{
-  width: 33.3%;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: 0 20px 0;
 }
 
 #foodsites{
-  width: 33.3%;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  margin: 0 20px 0;
 }
