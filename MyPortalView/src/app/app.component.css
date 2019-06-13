@@ -1,4 +1,9 @@
 /* Testing out CSS comments. */
+.flex-container{
+  display: flex;
+  flex-direction: column;
+}
+
 #portals{
   position: absolute;
   width: 1400px;
