@@ -1,14 +1,13 @@
-<div class="flex-container">
-  <div id="portals" class="btn-group">
-    <button id="techsites" (click)="showTechSites()"> techsites </button>
-    <button id="academicsites" (click)="showAcademicSites()"> academicsites </button>
-    <button id="foodsites" (click)="showFoodSites()"> foodsites </button>
-  </div>
-  <!-- The below is using two techniques, property binding and piping. -->
-  <!-- The left side of the below line of code is the property that is being -->
-  <!-- binded to the type$ observable in app.component.ts, -->
-  <!-- and the async is what's transforming the type$ as a data. -->
-  <div>
-    {{ type$ | async }}
-  </div>
+<div id="portals" class="btn-group">
+  <button id="techsites" (click)="showTechSites()"> techsites </button>
+  <button id="academicsites" (click)="showAcademicSites()"> academicsites </button>
+  <button id="foodsites" (click)="showFoodSites()"> foodsites </button>
 </div>
+<!-- The below is using two techniques, property binding and piping. -->
+<!-- The left side of the below line of code is the property that is being -->
+<!-- binded to the type$ observable in app.component.ts, -->
+<!-- and the async is what's transforming the type$ as a data. -->
+<div>
+  {{ type$ | async }}
+</div>
+<app-result></app-result>

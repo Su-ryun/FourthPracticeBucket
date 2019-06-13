@@ -1,34 +1,15 @@
-/* Testing out CSS comments. */
-.flex-container{
-  display: flex;
-  flex-direction: column;
-}
-
 #portals{
-  position: absolute;
-  width: 1400px;
-  height: 100px;
-  margin-bottom: 20px;
-  overflow-x: auto;
+  width: 100%;
 }
 
 #techsites{
-  position: relative;
-  width: 30%;
-  height: 100%;
-  margin: 0 20px 0;
+  width: 33.3%;
 }
 
 #academicsites{
-  position: relative;
-  width: 30%;
-  height: 100%;
-  margin: 0 20px 0;
+  width: 33.3%;
 }
 
 #foodsites{
-  position: relative;
-  width: 30%;
-  height: 100%;
-  margin: 0 20px 0;
+  width: 33.3%;
 }
