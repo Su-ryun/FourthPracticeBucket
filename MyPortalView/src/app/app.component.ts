@@ -1,9 +1,10 @@
-  import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 //If the below is: import { Observable } from 'rxjs/Observable';
 //Then I see the big fat errors everywhere.
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { FilterService } from './filter.service';
 
 // For the sake of simpler example, the below is currently not being used.
 interface Type {
@@ -19,7 +20,7 @@ export class AppComponent {
 
   type$: Observable<string>
 
-  constructor(private store: Store<string>){
+  constructor(private store: Store<string>, private filterService: FilterService){
     // While referring to StoreModule.forRoot({ type: typeReducer }),
     // the type$ observable reference is being coupled with typeReducer function
     // because the argument being passed to the select function.
