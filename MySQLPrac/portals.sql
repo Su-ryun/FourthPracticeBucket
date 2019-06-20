@@ -15,6 +15,13 @@ CREATE TABLE techsites (
 INSERT INTO techsites
     (URL, description, category)
 VALUES
+    ("https://www.csail.mit.edu/news/programmers-solve-mits-20-year-old-cryptographic-puzzle",
+    "The demonstration of the power of FPGA.",
+    "FPGA");
+
+INSERT INTO techsites
+    (URL, description, category)
+VALUES
     ("https://openconnectivity.org/",
     "World's leading IoT leaders, currently.",
     "IoT");
@@ -136,7 +143,7 @@ INSERT INTO academicsites
     (URL, description, category)
 VALUES
     ("https://www.coursera.org/learn/machine-learning",
-    "Super Saiyan Dr. Ng teaching a machine learning course.",
+    "Super Saiyan, Dr. Ng, teaching a machine learning course.",
     "Machine Learning");
 
 CREATE TABLE foodsites (
