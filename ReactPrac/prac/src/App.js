@@ -1,50 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 
-export class LightningCounter extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      strikes: 0
-    };
-    this.timerTick = this.timerTick.bind(this);
-  }
-
-  componentDidMount() {
-    setInterval(this.timerTick, 1000);
-  }
-
-  timerTick() {
-    this.setState({
-      strikes: this.state.strikes + 100
-    });
-  }
-
+export class Circle extends React.Component {
   render() {
-    return (
-      <h1>{this.state.strikes}</h1>
-    );
-  }
-
-}
-
-export class LightningCounterDisplay extends React.Component {
-  render() {
-    var divStyle = {
-      width: 250,
-      textAlign: "center",
-      backgroundColor: "black",
-      padding: 40,
-      fontFamily: "sans-serif",
-      color: "#999",
-      borderRadius: 10
+    var circleStyle = {
+      padding: 10,
+      margin: 20,
+      display: "inline-block",
+      backgroundColor: this.props.bgColor,
+      borderRadius: "50%",
+      width: 100,
+      height: 100,
     };
 
     return (
-      <div style={divStyle}>
-        <LightningCounter/>
+      <div style={circleStyle}>
       </div>
     );
   }
+}
+
+export function showCircle() {
+  var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363"];
+  var ran = Math.floor(Math.random() * colors.length);
+
+  // return a Circle with a randomly chosen color
+  return <Circle bgColor={colors[ran]} />;
 }

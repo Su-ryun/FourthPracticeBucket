@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {LightningCounterDisplay} from './App';
+import {Circle, showCircle} from './App';
 import HelloWorld from './HelloWorld';
 import * as serviceWorker from './serviceWorker';
 
 var destination = document.querySelector("#container");
 
-ReactDOM.render(<LightningCounterDisplay />, destination);
+ReactDOM.render(
+                  <div>
+                    {showCircle()}
+                    {showCircle()}
+                    {showCircle()}
+                  </div>,
+                  destination
+                );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
