@@ -1,32 +1,67 @@
 import React from 'react';
 import logo from './logo.svg';
+import ReactDOM from 'react-dom'
 
-export class Circle extends React.Component {
+var heading = document.querySelector("#colorHeading");
+
+export class ColorLabel extends React.Component {
   render() {
-    var circleStyle = {
-      padding: 10,
-      margin: 20,
-      display: "inline-block",
-      // Notice how this.props.bgColor is what's being passed from showCircle().
-      backgroundColor: this.props.bgColor,
-      borderRadius: "50%",
-      width: 100,
-      height: 100,
-    };
-
-    return (
-      // The below is not JS code, it's JSX.
-      <div style={circleStyle}>
-      </div>
+     return ReactDOM.createPortal(
+      ": " + this.props.color,
+      heading
     );
   }
 }
 
-export function showCircle() {
-  var colors = ["#393E41", "#E94F37", "#1C89BF", "#A1D363"];
-  var ran = Math.floor(Math.random() * colors.length);
 
-  // return a Circle with a randomly chosen color
-  // Once again, the below is JSX code.
-  return <Circle bgColor={colors[ran]} />;
+export class Colorizer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: "",
+      bgColor: "white"
+    };
+    this.colorValue = this.colorValue.bind(this);
+    this.setNewColor = this.setNewColor.bind(this);
+  }
+  colorValue(e) {
+    this.setState({
+      color: e.target.value
+    });
+  }
+  setNewColor(e) {
+    this.setState({
+      bgColor: this.state.color
+    });
+
+    this._input.focus();
+    this._input.value = "";
+
+    e.preventDefault();
+  }
+  render() {
+    var squareStyle = {
+    backgroundColor: this.state.bgColor
+  };
+
+  var self = this;
+
+  return (
+    <div className="colorArea">
+    <div style={squareStyle} className="colorSquare"></div>
+
+    <form onSubmit={this.setNewColor}>
+      <input onChange={this.colorValue}
+              ref={
+                function(el) {
+                  self._input = el;
+                }
+              }
+              placeholder="Enter a color value"></input>
+      <button type="submit">go</button>
+    </form>
+    <ColorLabel color={this.state.bgColor}/>
+  </div>
+  );
+  }
 }
