@@ -16,8 +16,21 @@ public class GetFoos{
   @RequestMapping(value = "/hello", method = RequestMethod.GET)
   //@ResponseBody annotation automatically serializes the returned object into JSON.
   @ResponseBody
-  public String getFoos() {
+  //@RequestParam represents the incoming HTTP request parameter.
+  public String getFoos(/*@RequestParam("formId") int someNumber*/) {
       return "Post some Foos";
   }
 
+  @GetMapping("/welcome")
+  @ResponseBody
+  public String showWelcome(){
+    return "<html><head></head><body>Fire mix tape.</body></html>";
+  }
+
+  //And code like the below can be used to process the incoming POST requests.
+  //@PostMapping("/posts")
+  //public String addPost(@RequestBody Post post) {
+  //  // post will get the content of the body that is deserialized
+  //  // into an object of type Post
+  //}
 }
