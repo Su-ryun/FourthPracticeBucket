@@ -1,0 +1,52 @@
+//https://www.jsoftware.com/help/learning/01.htm
+//Going through the above.
+//I don't know if J has a comment.
+//The below is a square function ... 
+*:
+//So, if I pass in 1 2 3 4 ...
+*: 1 2 3 4
+//Ouput becomes ...
+1 4 9 16 
+//Notice how the operation was apply to each and every element.
+//So ...
+1 2 3 + 10 20 30
+//Outputs ...
+11 22 33
+////
+1 2 3 + 10
+//Outputs
+11 12 13
+//But ...
+1 2 + 10 20 30
+//Outputs ...
+|length error
+|   1 2    +10 20 30
+//Same goes for the ...
+   1 2 3 + 10 20
+//Outputs ...
+|length error
+|   1 2 3    +10 20
+//To compute remainders, I use the vertical bar, instead of the modulo.
+////
+//To create a variable:
+x =: 100
+//J has this thing called insert function.
++ / 2 3 4
+//The above is same as:
+2 + 3 + 4
+//So, the result would be.
+9
+////
+//Conditionals are trated via 1 or 0, like the old C.
+//Therefore ...
+2 = 2
+//Outputs 
+1
+//The below:
+2 < 1
+//Outputs
+//Consider the below:
+x =: 5 4 1 9
+//x currently has 4 elements (it's a list).
+x > 2
+//The above asks, "does x has more than 2 elements?"
