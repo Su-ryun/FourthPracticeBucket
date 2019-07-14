@@ -50,3 +50,22 @@ x =: 5 4 1 9
 //x currently has 4 elements (it's a list).
 x > 2
 //The above asks, "does x has more than 2 elements?"
+//J has a comment.
+NB. This is a whole line of annotation.
+//J Provides monadic functions, like the ones from Haskell.
+>. _1.7 1 1.7
+// So, the >. function will intake the elements on the right and output ...
+_1 1 2
+// There is also a monadic function to increment a given value.
+>: _2 3 5 6.3
+// The above will output.
+_1 4 6 7.3
+//A table with 2 rows and 3 columns can be created via ...
+table =: 2 3   $   5 6 7  8 9 10
+//Which can be built with the $ function.
+////
+//Strings are written with singl quotation marks.
+someString =: 'lol'
+//J doesn't have any escape sequences; therefore, in order to chuck in a single quote inside a String.
+'What''s up'
+//You have put in two successive single quotes to do just that.
