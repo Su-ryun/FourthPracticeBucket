@@ -69,3 +69,20 @@ someString =: 'lol'
 //J doesn't have any escape sequences; therefore, in order to chuck in a single quote inside a String.
 'What''s up'
 //You have put in two successive single quotes to do just that.
+////
+//I am pretty sure the below concept is pretty darn important.
+//There is this concept called "Box" in J, and I just don't see the reason for using it.
+//From the looks of things, Boxing is very J specific, and no other languages use'em.
+//It's a freaking strange concept; so, this is one of the demonstration.
+A =: 'The answer is'  ;  42
+// Reference A now has two boxes.
+// I can fetch one of them specific via "selecting."
+0 { A
+// The above will grab me 'The answer is', which is still boxed.
+//Elements can either be boxed or unboxed.
+//The below boxes the element,
+b =: < 1 2 3
+//where I can unbox them via like below.
+> b
+////
+//
