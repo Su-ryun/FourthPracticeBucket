@@ -85,4 +85,45 @@ b =: < 1 2 3
 //where I can unbox them via like below.
 > b
 ////
-//
+//So, I have to go back to ch 3 because there were a lot of concepts
+//those don't exist in majority of the languages I've encountered in my life.
+ ////
+ //From the looks of things, this is the only way to create String at the moment?
+txt =: 0 : 0
+What is called a "script" is
+a sequence of lines of J.
+)
+//The variable txt now contains the following: "What is called a "script" is a sequence of lines of J."
+//In the realm of J, you can perform sequences of operation via like the below:
+   script =: 0 : 0
+t =: T - 32
+t * 5 % 9
+)
+do =: 0 !: 1
+//With the aboves, when you execute the below:
+do script
+//The output will be:
+t =: T - 32
+t * 5 % 9
+100
+//Of course, you can assign a new value to T.
+////
+//The below is an example on how one could use branches in J.
+volume =: 3 : 0
+if.   3 = # y
+do.   * / y
+else. 'ERROR'
+end.
+)
+//What the heck am I looking at, really.
+////
+//J script file ends with .ijs.
+//For example, full name of a J file could be: myscript.ijs
+F =: 'D:\temp\myscript.ijs'
+//Where reference F contains the path to myscript.ijs
+//Let's assume myscript.ijs contains ...
+squareroot =: %:
+z =: 1 , (2+2) , (4+5)
+//Since, instance F has a path to the file containing the above ...
+0!:1 < F
+//I can use the contents inside the myscript like a macro from C/C++.
